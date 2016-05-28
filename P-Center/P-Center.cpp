@@ -10,7 +10,7 @@ int random(const int base) {
 int main(int argc,char* argv[])
 {
 	Input input;
-	if (readTxtInstance("F:\\instances\\pmed8.txt", input)) 
+	if (readTxtInstance("F:\\instances\\pmed34.txt", input)) 
 	{
 		cout << "read instance succeed\n";
 	}
@@ -19,7 +19,7 @@ int main(int argc,char* argv[])
 	{
 		cout << "ok";
 	}
-	writeFile(solution);
+	
 	return 0;
 }
 

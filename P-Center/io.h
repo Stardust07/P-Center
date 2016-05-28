@@ -1,5 +1,5 @@
-#ifndef IO_H
-#define IO_H
+#ifndef IO2_H
+#define IO2_H
 #include "Input.h"
 #include "solution.h"
 #include <string>
@@ -9,5 +9,5 @@
 
 using namespace std;
 bool readTxtInstance(const string &instancePath, Input &input);
-bool writeFile(const Solution &sln);
+bool writeFile(const Solution &sln, int time);
 #endif

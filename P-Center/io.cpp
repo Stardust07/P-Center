@@ -28,20 +28,24 @@ bool readTxtInstance(const string &instancePath, Input &input)
 	return true;
 }
 
-bool writeFile(const Solution &sln)
+bool writeFile(const Solution &sln, int time)
 {
-	ofstream outFile("F:\\table.csv");
+	stringstream fileName;
+	fileName << "F:\\table" << time << ".csv";
+
+	ofstream outFile(fileName.str());
 	if (!outFile.is_open()) {
 		return false;
 	}
+	outFile << "server points\n";
 	for (int i = 0; i < sln.serverPoints.size(); ++i) {
-		outFile << sln.serverPoints[i] << ",";
+		outFile << sln.serverPoints[i] + 1 << ",";
 	}
-	outFile << "\n" << sln.maxLength;
+	outFile << "\nmax length:" << sln.maxLength;
 	outFile << "\n,ftable,,,dtable\n";
 	outFile << "point,f0,f1,,d0,d1\n";
 	for (int i = 0; i < sln.instance.numberOfPoint; ++i) {
-		outFile << i << "," << sln.fTable[i][0] << "," << sln.fTable[i][1] 
+		outFile << i + 1 << "," << sln.fTable[i][0] + 1 << "," << sln.fTable[i][1] + 1
 			<< ",," << sln.dTable[i][0] << "," << sln.dTable[i][1] << "\n";
 	}
 	outFile.close();
